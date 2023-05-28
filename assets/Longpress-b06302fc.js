@@ -1,0 +1,1 @@
+import{j as t}from"./index-887eaa62.js";import{u as r}from"./Button-c24d5508.js";const g=({action:s,children:o,style:e})=>{const n=r(()=>{s()},()=>{console.log("click is triggered")},{shouldPreventDefault:!0,delay:500});return t.jsx("div",{className:e,...n,children:o})};export{g as L};
