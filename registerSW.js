@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Orderly/sw.js', { scope: '/Orderly/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/theocratic-software/sw.js', { scope: '/theocratic-software/' })})}
