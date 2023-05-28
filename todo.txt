@@ -1,0 +1,19 @@
+* feature
++ improvement
+$ styling
+# fix 
+@ refactoring
+
+
+
++ change log scrolling
+
+# limit duplicate streets and suburbs
+# prevent online functions when offline 
+# fix white banner on modal open
+# change suburb and street search to start after 3 characters
+
+
+$ variable text size on Select component
+$ fix Select component bottom margin
+
