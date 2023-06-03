@@ -11,5 +11,29 @@
       "enabled": true
     },
     "singleProjectMode": true
-  }
+  },
+  "hosting": [
+    {
+      "target": "orderly",
+      "public": "dist/orderly",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "proclaimer",
+      "public": "dist/proclaimer",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
 }

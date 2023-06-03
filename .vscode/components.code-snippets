@@ -8,7 +8,7 @@
   // Example:
   "Header Component": {
     "scope": "javascriptreact,typescriptreact",
-    "prefix": "component",
+    "prefix": "file",
     "body": [
       "import Header from '@COMPONENTS/containers/Header';",
       "",

@@ -9,11 +9,11 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return defineConfig({
-    base: `/${process.env.VITE_APP_NAME}/`,
+    base: `/theocratic-software/`,
     build: {
-      outDir: "dist",
+      outDir: `dist/${process.env.VITE_APP_NAME.toLowerCase()}`,
     },
-    publicDir: `src/apps/proclaimer/public`,
+    publicDir: `src/apps/${process.env.VITE_APP_NAME.toLowerCase()}/public`,
     plugins: [
       svgr({
         svgrOptions: {
@@ -31,7 +31,7 @@ export default ({ mode }) => {
          * After writing entry here, you will not need to add script tags in `index.html`, the original tags need to be deleted
          * @default src/main.ts
          */
-        entry: "src/main.tsx",
+        entry: `src/apps/${process.env.VITE_APP_NAME.toLowerCase()}/app/main.tsx`,
         /**
          * If you want to store `index.html` in the specified folder, you can modify it, otherwise no configuration is required
          * @default index.html
