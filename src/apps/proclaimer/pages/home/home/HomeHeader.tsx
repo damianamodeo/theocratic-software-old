@@ -4,7 +4,7 @@ const HomeHeader = () => {
   return (
     <Header
       left={null}
-      center={<div className={``}>Home</div>}
+      center={<div className={``}>Proclaimer</div>}
       right={null}
     />
   );

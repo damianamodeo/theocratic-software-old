@@ -1,8 +1,4 @@
-import EditUserID from "@COMPONENTS/localStorage/EditUsername";
 import Version from "@COMPONENTS/utility/Version";
-import Center from "@CONTAINERS/Center";
-import ChangeLog from "./changeLog/ChangeLog";
-import AddMapID from "@COMPONENTS/firebase/AddMaps";
 import Card from "@CONTAINERS/Card";
 
 type SettingsType = {
@@ -18,9 +14,6 @@ const Settings = ({ changeSubpage }: SettingsType) => {
       </Card>
       <Card onClick={() => changeSubpage("Details", "<")}>
         <Card.Title>Details</Card.Title>
-      </Card>
-      <Card onClick={() => changeSubpage("Examples", "<")}>
-        <Card.Title>Component Examples</Card.Title>
       </Card>
     </div>
   );
