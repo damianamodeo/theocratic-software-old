@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import AddStreetModal from "./components/AddStreetModal";
 import AddSuburbModal from "./components/AddSuburbModal";
 import Form from "@INPUTS/Form";
@@ -7,6 +7,7 @@ import getAddressCoordinates from "@SERVICES/mapbox/getAddressCoordinates";
 import addNotAtHome from "@SERVICES/firebase/addNotAtHome";
 import SubmitAddressModal from "./components/SubmitAddressModal";
 import Center from "@CONTAINERS/Center";
+import { AnyZodObject } from "zod";
 
 const reducer = (state: any, action: any) => {
   if (typeof action.payload === "object") {
@@ -77,6 +78,7 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
     mapData: {},
   });
   const [submit, setSubmit] = useState(false);
+  const houseNumberRef = useRef<any>(null);
 
   const currentMapIndex = () => {
     return Math.max(
@@ -192,6 +194,7 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
                 }
                 width="sm"
                 height="md"
+                ref={houseNumberRef}
               ></Form.Alphanumeric>
             )}
           </div>
@@ -200,7 +203,12 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
             {state.houseNumber === "" ? null : (
               <Center>
                 <Button
-                  clickAction={() => setSubmit(true)}
+                  clickAction={() => {
+                    if (document.activeElement instanceof HTMLElement) {
+                      document.activeElement.blur();
+                    }
+                    setSubmit(true);
+                  }}
                   width="md"
                   height="md"
                   color="blue"
@@ -212,7 +220,9 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
           </div>
         </Form>
 
-        <AddSuburbModal
+      
+      </div>
+      <AddSuburbModal
           isOpen={state.suburb === "adding suburb"}
           closeModal={dispatch}
           map={currentMapIndex()}
@@ -242,7 +252,6 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
             dispatch={dispatch}
           ></SubmitAddressModal>
         )}
-      </div>
     </>
   );
 };

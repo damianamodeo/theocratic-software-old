@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 import App from "../../../components/containers/AppScreen";
 import Home from "../pages/home/home/Home";
 import HomeHeader from "../pages/home/home/HomeHeader";
@@ -54,6 +54,16 @@ function Proclaimer() {
       },
     },
   ];
+
+  useEffect(() => {
+    const handleBackButton = () => {
+      window.history.pushState({}, "");
+    };
+    window.addEventListener("popstate", handleBackButton);
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, []);
 
   return <App pages={pages} />;
 }

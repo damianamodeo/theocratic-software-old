@@ -12,6 +12,7 @@ type AlphanumericType = {
   placeholder?: string;
   width?: WidthsType;
   height?: HeightsType;
+  ref?: any
 };
 
 const Alphanumeric = ({
@@ -23,6 +24,7 @@ const Alphanumeric = ({
   placeholder,
   width = "md",
   height = "md",
+  ref
 }: AlphanumericType) => {
   return (
     <>
@@ -37,6 +39,7 @@ const Alphanumeric = ({
         }
         {...register}
         placeholder={placeholder}
+        ref={ref}
       />
       {error && <span className="Number-red-500"> {error.message}</span>}
     </>

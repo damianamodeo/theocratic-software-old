@@ -9,7 +9,11 @@ const Version = () => {
   const formattedRelativeBuildTime = new Intl.RelativeTimeFormat("en-AU", {
     style: "short",
     numeric: "auto",
-  }).format(Math.round((buildTime - Date.now()) / 1000 / 60 / 60 / 24), "days");
+  }).format(
+    Math.round(buildTime / 1000 / 60 / 60 / 24) -
+      Math.round(Date.now() / 1000 / 60 / 60 / 24),
+    "days"
+  );
 
   const time = Date.now() + 1000;
 
@@ -19,6 +23,12 @@ const Version = () => {
         <p>
           Version: {formattedBuildTime} ({formattedRelativeBuildTime})
         </p>
+        {/* <p>{Math.round(buildTime / 1000 / 60 / 60 / 24)}</p>
+        <p>{Math.round(Date.now() / 1000 / 60 / 60 / 24)}</p>
+        <p>
+          {Math.round(buildTime / 1000 / 60 / 60 / 24) -
+            Math.round(Date.now() / 1000 / 60 / 60 / 24)}
+        </p> */}
       </div>
     </>
   );
