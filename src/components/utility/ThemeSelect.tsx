@@ -11,6 +11,22 @@ export default function ThemeSelect() {
       <Form.Select
         options={["light", "dark", "auto"]}
         onChange={(ev) => {
+
+          const body = document.querySelector(".body");
+
+          ev === "light"
+            ? body?.setAttribute(
+                "content",
+                import.meta.env.VITE_APP_THEME_COLOR_LIGHT
+              )
+            : ev === "dark"
+            ? body?.setAttribute(
+                "content",
+                import.meta.env.VITE_APP_THEME_COLOR_DARK
+              )
+            : null;
+
+
           const light = document.querySelector("#light-theme");
           const dark = document.querySelector("#dark-theme");
           light?.setAttribute(

@@ -1,9 +1,11 @@
 import TabbedPage from "@CONTAINERS/TabbedPage";
 import { fdb } from "@SERVICES/firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import SuburbsList from "./tabs/suburbsList/SuburbsList";
-import MapsList from "./tabs/mapList/MapList";
+// import MapsList from "./tabs/mapList/MapList";
+// import MapView from "./tabs/mapView/MapView";
+const MapView = lazy(() => import("./tabs/mapView/MapView"));
 
 type ReturnType = {
   changeSubpage: (newSubpage: string, direction: "<" | ">") => void;
@@ -111,13 +113,21 @@ const Return = ({ changeSubpage }: ReturnType) => {
         color={"blue"}
         tabItems={[
           {
-            title: "Suburb",
-            content: <SuburbsList suburbs={suburbs}></SuburbsList>,
+            title: "Map View",
+            content: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <MapView notAtHomesList={notAtHomesList}></MapView>
+              </Suspense>
+            ),
           },
           {
-            title: "Map ID",
-            content: <MapsList mapNumbers={mapNumbers}></MapsList>,
+            title: "List View",
+            content: <SuburbsList suburbs={suburbs}></SuburbsList>,
           },
+          // {
+          //   title: "Map ID List",
+          //   content: <MapsList mapNumbers={mapNumbers}></MapsList>,
+          // },
         ]}
       ></TabbedPage>
     </div>

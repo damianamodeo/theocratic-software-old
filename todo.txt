@@ -12,9 +12,11 @@ $ styling
 # prevent online functions when offline 
 # fix white banner on modal open
 # change suburb and street search to start after 3 characters
+# letter writing modal
+# body background color`
 
 
 $ variable text size on Select component
 $ fix Select component bottom margin
 
-    "generate-PROCLAIMER-pwa-assets": "npx pwa-asset-generator src/apps/orderly/app/logo.svg src/apps/orderly/public/assets --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env.orderly  ) --favicon true --padding '10%'"
+@ add class variance and twmerge packages
