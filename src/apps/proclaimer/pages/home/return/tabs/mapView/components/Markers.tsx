@@ -17,7 +17,6 @@ const Markers = ({
   setAddress,
   setModalOpen,
 }: any) => {
-  
   const points: any = notAtHomesList
     .filter((address: any) => address.lat !== undefined)
     .filter((address: any) => address.letter !== true)
@@ -55,6 +54,7 @@ const Markers = ({
         if (isCluster) {
           return (
             <NHCluster
+              key={cluster.id}
               cluster={cluster}
               supercluster={supercluster}
               mapRef={mapRef}
@@ -76,6 +76,7 @@ const Markers = ({
 
         return (
           <NHHouseMarker
+            key={cluster.properties.id}
             cluster={cluster}
             setAddress={setAddress}
             setModalOpen={setModalOpen}

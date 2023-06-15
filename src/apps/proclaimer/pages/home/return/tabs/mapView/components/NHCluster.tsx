@@ -22,7 +22,7 @@ const NHCluster = ({
   viewport,
 }: NHClusterType) => {
   return (
-    <Marker key={id} latitude={lat} longitude={lng}>
+    <Marker key={`${id}`} latitude={lat} longitude={lng}>
       <div
         className={`${
           point_count < 5

@@ -15,7 +15,7 @@ const CombinedList = ({ mapNumbers: suburbs }: CombinedListType) => {
   return (
     <div className={``}>
       <div className=" mx-12 text-center dark:text-white">
-        Press and hold and address to save it to your Personal List
+        Press and hold an address to save it to your Personal List
       </div>
       {suburbs
         .filter((address: any) => {

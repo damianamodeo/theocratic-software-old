@@ -14,7 +14,7 @@ const SuburbsList = ({ suburbs }: SuburbsListType) => {
   const [address, setAddress] = useState<any>(undefined);
   const [modalOpen, setModalOpen] = useState(false);
   let render = false;
-  let time = Date.now()
+  let time = Date.now();
   useEffect(() => {
     render = true;
   }, []);
@@ -64,28 +64,22 @@ const SuburbsList = ({ suburbs }: SuburbsListType) => {
                               className={` grid grid-cols-[repeat(auto-fill,minmax(3.5rem,1fr))]`}
                             >
                               {street.addresses
-                                .sort(
-                                  (
-                                    a: {
-                                      houseNumber: number;
-                                      unitNumber: number;
-                                    },
-                                    b: {
-                                      houseNumber: number;
-                                      unitNumber: number;
-                                    }
-                                  ) => {
-                                    const strA =
-                                      String(a.unitNumber * 0.001) +
-                                      String(a.unitNumber * 0.001);
-                                    const strB =
-                                      String(b.unitNumber * 0.001) +
-                                      String(b.unitNumber * 0.001);
-                                    return strA
-                                      .toLowerCase()
-                                      .localeCompare(strB);
+                                .sort((a: any, b: any) => {
+                                  if (a.houseNumber !== b.houseNumber) {
+                                    return a.houseNumber - b.houseNumber; // Sort by name ascending
+                                  } else {
+                                    return a.unitNumber - b.unitNumber; // If names are equal, sort by age ascending
                                   }
-                                )
+                                  // const strA =
+                                  //   String(a.unitNumber * 0.001) +
+                                  //   String(a.unitNumber * 0.001);
+                                  // const strB =
+                                  //   String(b.unitNumber * 0.001) +
+                                  //   String(b.unitNumber * 0.001);
+                                  // return strA
+                                  //   .toLowerCase()
+                                  //   .localeCompare(strB);
+                                })
                                 .map((address: any, index: any) => (
                                   <div key={index}>
                                     <div
