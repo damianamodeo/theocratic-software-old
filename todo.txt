@@ -7,6 +7,7 @@ $ styling
 
 
 + change log scrolling
++ open source libraries
 
 # limit duplicate streets and suburbs
 # prevent online functions when offline 
@@ -20,3 +21,6 @@ $ variable text size on Select component
 $ fix Select component bottom margin
 
 @ add class variance and twmerge packages
+
+
+npm audit fix

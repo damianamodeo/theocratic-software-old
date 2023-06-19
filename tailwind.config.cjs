@@ -71,6 +71,9 @@ module.exports = {
           975: "#0e0e0e",
         },
       },
+      fontSize: {
+        'xxs': '0.7rem',
+      },
     },
   },
   plugins: [],

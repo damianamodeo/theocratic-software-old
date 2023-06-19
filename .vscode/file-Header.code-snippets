@@ -12,11 +12,11 @@
     "body": [
       "import Header from '@COMPONENTS/containers/Header';",
       "",
-      "type ${TM_FILENAME_BASE}Type = {",
+      "type ${TM_FILENAME_BASE}Props = {",
       "  changeSubpage: (newSubpage: string, direction: '<' | '>') => void;",
       "};",
       "",
-      "const ${TM_FILENAME_BASE} = ({ changeSubpage }: ${TM_FILENAME_BASE}Type) => {",
+      "const ${TM_FILENAME_BASE} = ({ changeSubpage }: ${TM_FILENAME_BASE}Props) => {",
       "",
       "  console.log('${TM_FILENAME_BASE}', `${'variable'}`)",
       "  return (",

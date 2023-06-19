@@ -8,6 +8,11 @@ import path from "node:path";
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
+  if (process.env.VITE_APP_NAME === "Storybook") {
+    return defineConfig({
+      plugins: [react()],
+    });
+  }
   return defineConfig({
     base: `/theocratic-software/`,
     build: {

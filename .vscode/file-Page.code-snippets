@@ -12,12 +12,12 @@
     "body": [
 
       "",
-      "type ${TM_FILENAME_BASE}Type = {",
+      "type ${TM_FILENAME_BASE}Props = {",
       "  children: any;",
       "  changeSubpage: (newSubpage: string, direction: '<' | '>') => void;",
       "};",
       "",
-      "const ${TM_FILENAME_BASE} = ({children, changeSubpage }: ${TM_FILENAME_BASE}Type) => {",
+      "const ${TM_FILENAME_BASE} = ({children, changeSubpage }: ${TM_FILENAME_BASE}Props) => {",
       "",
       "   console.log('${TM_FILENAME_BASE}', `${'variable'}`)",
       "    return (",

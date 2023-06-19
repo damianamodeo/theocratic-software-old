@@ -9,11 +9,11 @@
   "-Blank Component": {
     "prefix": "file",
     "body": [
-      "type ${1/(.*)/${1:/capitalize}/}Type = { ",
+      "type ${1/(.*)/${1:/capitalize}/}Props = { ",
       "  children?: any",
       "  }",
       "",
-      "const ${1/(.*)/${1:/capitalize}/} = ({ children }: ${1/(.*)/${1:/capitalize}/}Type) => {",
+      "const ${1/(.*)/${1:/capitalize}/} = ({ children }: ${1/(.*)/${1:/capitalize}/}Props) => {",
       "  return (",
       "    <${2|div,p,span,a|} ${3:className={``\\}}>",
       "      ${1:${TM_FILENAME_BASE}}",
