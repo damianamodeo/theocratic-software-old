@@ -14,6 +14,7 @@
       "  }",
       "",
       "const ${1/(.*)/${1:/capitalize}/} = ({ children }: ${1/(.*)/${1:/capitalize}/}Props) => {",
+      "   //console.log('${TM_FILENAME_BASE}', `${'variable'}`)",
       "  return (",
       "    <${2|div,p,span,a|} ${3:className={``\\}}>",
       "      ${1:${TM_FILENAME_BASE}}",

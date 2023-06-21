@@ -1,7 +1,7 @@
 import Map from "@COMPONENTS/mapbox/Map";
 import { useEffect, useRef, useState } from "react";
 import UpdateAddressModal from "../../../components/UpdateAddressModal";
-import { MapRef, Marker } from "react-map-gl";
+import { GeolocateControl, MapRef, Marker } from "react-map-gl";
 import useSupercluster from "use-supercluster";
 import NHUnitMarkers from "./NHUnitMarkers";
 import NHInaccurateMarkers from "./NHInaccurateMarkers";
@@ -21,8 +21,8 @@ const MapView = ({ children, notAtHomesList }: any) => {
   const [viewport, setViewport] = useState<any>({
     latitude: 52.6376,
     longitude: -1.135171,
-    width: "100vw",
-    height: "100vh",
+    // width: "100vw",
+    // height: "100vh",
     zoom: 12,
   });
 
@@ -48,15 +48,6 @@ const MapView = ({ children, notAtHomesList }: any) => {
           })
         }
       >
-        {/* <Marker latitude={-32.7316} longitude={151.5525} color="red"
-        
-        
-        
-        // latitude: -32.7316,
-        // longitude: 151.5525,
-        
-        
-        ></Marker> */}
         <Markers
           notAtHomesList={notAtHomesList}
           mapRef={mapRef}
@@ -65,6 +56,7 @@ const MapView = ({ children, notAtHomesList }: any) => {
           setAddress={setAddress}
           setModalOpen={setModalOpen}
         ></Markers>
+        <GeolocateControl showUserHeading={true} trackUserLocation={true} />
       </Map>
     </div>
   );

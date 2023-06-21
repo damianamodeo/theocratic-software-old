@@ -18,7 +18,7 @@
       "",
       "const ${TM_FILENAME_BASE} = ({ changeSubpage }: ${TM_FILENAME_BASE}Props) => {",
       "",
-      "   console.log('${TM_FILENAME_BASE}', `${'variable'}`)",
+      "    //console.log('${TM_FILENAME_BASE}', `${'variable'}`)",
       "    return (",
       "    <div className={`h-full`}>",
       "      <TabbedPage",

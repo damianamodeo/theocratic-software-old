@@ -11,6 +11,7 @@
     "body": [
 
       "{${1:${CLIPBOARD}}.map((${2:${CLIPBOARD}}: any, index: number) => {",
+      "   //console.log('${TM_FILENAME_BASE}', `${'${2:${CLIPBOARD}}'}`)",
       "  return <div key={${2:${CLIPBOARD}}.id}>",
       "    {${2:${CLIPBOARD}}.$3}",
       "  </div>;",

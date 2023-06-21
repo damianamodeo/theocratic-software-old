@@ -31,7 +31,7 @@ const Map = ({ children, mapRef, onMoveEnd, onLoad }: MapboxType) => {
         mapboxAccessToken={import.meta.env.VITE_APP_MAPBOX_TOKEN}
         ref={mapRef}
         onMoveEnd={(event: any) => {
-          onMoveEnd(event)
+          onMoveEnd(event);
         }}
         // onLoad={(event: any) => {
         //   onLoad(event);

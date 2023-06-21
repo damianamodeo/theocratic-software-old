@@ -1,19 +1,17 @@
-import AddMapID from "@COMPONENTS/firebase/AddMaps"
-import Button from "@INPUTS/Button/Button"
+import AddMapID from "@COMPONENTS/firebase/AddMaps";
+import Button from "@INPUTS/Button/Button";
 
-type HomeType = { 
-  children?: any
-  }
+type HomeType = {
+  changeSubpage: (newSubpage: string, direction: "<" | ">") => void;
+};
 
-const Home = ({ children }: HomeType) => {
+const Home = ({ changeSubpage }: HomeType) => {
   return (
-    <div className={`centered `}>
-     <AddMapID></AddMapID>
-     <Button width={"medium"} color={"green"} size={"2xl"}>Hello</Button>
-      { children }
-      
+    <div className={`grid place-items-center gap-6`}>
+      <AddMapID></AddMapID>
+      <Button clickAction={() => changeSubpage("Test", "<")}>Test Page</Button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
