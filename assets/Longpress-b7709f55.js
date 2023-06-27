@@ -1,1 +1,0 @@
-import{j as t}from"./index-3a0f1145.js";import{u as r}from"./Modal-9b316e3e.js";const g=({action:s,children:o,style:e})=>{const n=r(()=>{s()},()=>{console.log("click is triggered")},{shouldPreventDefault:!0,delay:500});return t.jsx("div",{className:e,...n,children:o})};export{g as L};
