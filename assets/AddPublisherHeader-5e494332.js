@@ -1,0 +1,1 @@
+import{j as e,H as s,B as t}from"./index-70d63fb2.js";const d=({changeSubpage:r})=>e.jsx(s,{left:e.jsx("div",{className:"text-[2rem] m-auto",onClick:()=>r("Home",">"),children:e.jsx(t,{})}),center:e.jsx("div",{className:"",children:"Add Publisher"}),right:e.jsx("div",{className:"text-[2rem] m-auto",onClick:()=>{}})});export{d as default};
