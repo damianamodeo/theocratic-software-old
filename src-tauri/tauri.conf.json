@@ -7,7 +7,7 @@
     "distDir": "../dist/proclaimer"
   },
   "package": {
-    "productName": "theocratic-softare",
+    "productName": "theocratic-software",
     "version": "0.1.0"
   },
   "tauri": {
@@ -58,7 +58,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "theocratic-softwrae",
+        "title": "theocratic-software",
         "width": 800
       }
     ]
