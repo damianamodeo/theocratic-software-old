@@ -26,7 +26,7 @@ const Map = ({ children, mapRef, onMoveEnd, onLoad }: MapboxType) => {
           zoom: 11,
         }}
         pitch={0}
-        bearing={0}
+        // bearing={0}
         mapStyle={mapStyle}
         mapboxAccessToken={import.meta.env.VITE_APP_MAPBOX_TOKEN}
         ref={mapRef}

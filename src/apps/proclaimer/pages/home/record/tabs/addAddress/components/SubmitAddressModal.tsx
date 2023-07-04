@@ -45,8 +45,10 @@ const SubmitAddressModal = ({
       letter,
     });
     if (address.unitNumber === "") {
+      localStorage.setItem("addAddressHouseNumber", "");
       dispatch({ type: "houseNumber", payload: "" });
     }
+    localStorage.setItem("addAddressUnitNumber", "");
     dispatch({ type: "unitNumber", payload: "" });
     closeModal(false);
   };

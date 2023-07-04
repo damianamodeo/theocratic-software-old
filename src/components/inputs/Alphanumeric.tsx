@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import widths, { WidthsType } from "./styles/widths";
-import heights, { HeightsType } from "./styles/heights";
+import widths, { WidthsType } from "./styles2/widths";
+import heights, { HeightsType } from "./styles2/heights";
 import { useState } from "react";
 
 type AlphanumericType = {
@@ -34,8 +34,8 @@ const Alphanumeric = ({
         type="text"
         pattern="^[a-zA-Z0-9]*$"
         value={value}
-        onChange={(e) =>
-          onChange(e.target.value.replace(/[^\w\s]/gi, "").replace(/[\s]/g, ""))
+        onChange={(e) =>{
+          onChange(e.target.value.replace(/[^\w\s]/gi, "").replace(/[\s]/g, ""))}
         }
         {...register}
         placeholder={placeholder}

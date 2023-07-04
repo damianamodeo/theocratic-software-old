@@ -1,5 +1,5 @@
 import Accordian from "@CONTAINERS/Disclosure";
-import LongPress from "@INPUTS/Longpress";
+import LongPress from "@CONTAINERS/Longpress";
 import { useState } from "react";
 import SelectAddressModal from "./SelectAddressModal";
 // import UpdateAddressModal from "../../components/UpdateAddressModal";

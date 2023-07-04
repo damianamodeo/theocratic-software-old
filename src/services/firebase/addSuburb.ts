@@ -22,9 +22,9 @@ const addSuburb = async ({ cong, mapID, suburb, bbox }: NewSuburbType) => {
       const mapDetails = await transaction.get(documentRef).then((a) => {
         return a.data()?.mapDetails;
       });
+        console.log(mapDetails); //Log Variable
+      
       // add new suburb and sort
-
-
       mapDetails[mapID].suburbs = [
         ...mapDetails[mapID].suburbs,
         mapDetails[mapID].suburbs

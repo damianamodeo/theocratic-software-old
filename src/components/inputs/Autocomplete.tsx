@@ -1,7 +1,7 @@
 import { Combobox, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import widths, { WidthsType } from "./styles/widths";
-import heights, { HeightsType } from "./styles/heights";
+import widths, { WidthsType } from "./styles2/widths";
+import heights, { HeightsType } from "./styles2/heights";
 
 type ComboBoxType = {
   value?: JSX.Element | string | number;

@@ -1,5 +1,5 @@
 {
-  "name": "proclaimer",
+  "name": "theocratic-softwrae",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,6 +7,7 @@
     "emulator-start": "                             firebase emulators:start --import=./local --export-on-exit",
     "storybook": "                                     storybook dev -p 6006",
     "build-storybook": "                          storybook build",
+    "deploy-rules": "                               firebase deploy --only firestore:rules",
     " ": "",
     "ORDERLY": "",
     "dev-o": "                                            vite --host --port 5175 --mode orderly",
@@ -22,14 +23,15 @@
     "preview-p": "                                      vite preview --host --port 4174 --mode orderly",
     "deploy-gh-p": "                                 npx gh-pages-clean && tsc && VITE_APP_BUILD_TIME=$(date +%s) vite build --mode proclaimer && gh-pages -d dist/proclaimer -m 'gh-pages deploy'",
     "deploy-fb-p": "                                   tsc && VITE_APP_BUILD_TIME=$(date +%s) vite build --base=./ --mode proclaimer && firebase deploy --only hosting:proclaimer",
-    "generate-assets-p": "                       npx pwa-asset-generator src/apps/proclaimer/app/logo.svg src/apps/proclaimer/public/assets --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env.proclaimer  ) --favicon true --padding '10%'"
+    "generate-assets-p": "                       npx pwa-asset-generator src/apps/proclaimer/app/logo.svg src/apps/proclaimer/public/assets --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env.proclaimer  ) --favicon true --padding '10%'",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@hookform/resolvers": "^3.0.0",
     "class-variance-authority": "^0.6.0",
     "dexie": "^3.2.3",
-    "dexie-react-hooks": "^1.1.3",
+    "dexie-react-hooks": "^1.1.6",
     "firebase": "^9.19.1",
     "framer-motion": "^10.2.4",
     "gh-pages": "^5.0.0",
@@ -59,6 +61,7 @@
     "@storybook/react": "^7.0.21",
     "@storybook/react-vite": "^7.0.21",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@tauri-apps/cli": "^1.4.0",
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",

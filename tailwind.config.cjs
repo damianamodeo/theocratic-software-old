@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        jw:{
+        jw: {
           purple: "#5b3c88",
           purpleLight: "#c1a7e2",
           blue: "#4a6da7",
@@ -19,20 +19,39 @@ module.exports = {
           peach: "#f17e5f",
           turquoise: "#59b3be",
           mauve: "#9c638e",
-          maroon: "#942926"
+          maroon: "#942926",
         },
-        proclaimer:{
+        proclaimer: {
           light: "#799fcc",
           DEFAULT: "#4a6da7",
+          100: "#dbe2ed",
+          200: "#b7c5dc",
+          300: "#92a7ca",
+          400: "#6e8ab9",
+          500: "#4a6da7",
+          600: "#3b5786",
+          700: "#2c4164",
+          800: "#1e2c43",
+          900: "#0f1621",
         },
-        orderly:{
+        orderly: {
           light: "#d27674",
           DEFAULT: "#942926",
+          200: "#ead4d4",
+          300: "#d4a9a8",
+          400: "#bf7f7d",
+          500: "#a95451",
+          600: "#942926",
+          700: "#76211e",
+          800: "#591917",
+          900: "#3b100f",
+          900: "#1e0808",
+          1000: "#1e0808"
         },
         grey: {
-          25:  "#f2f2f2",
-          50:  "#ececec",
-          75:  "#e6e6e6",
+          25: "#f2f2f2",
+          50: "#ececec",
+          75: "#e6e6e6",
           100: "#e0e0e0",
           125: "#dadada",
           150: "#d4d4d4",
@@ -72,7 +91,7 @@ module.exports = {
         },
       },
       fontSize: {
-        'xxs': '0.7rem',
+        xxs: "0.7rem",
       },
     },
   },

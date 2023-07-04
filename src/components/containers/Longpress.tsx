@@ -1,4 +1,4 @@
-import { useLongPress } from "./useLongPress";
+import { useLongPress } from "../../services/utility/useLongPress";
 
 const LongPress = ({ action, children, style }: any) => {
   const onLongPress = () => {

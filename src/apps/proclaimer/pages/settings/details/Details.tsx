@@ -1,3 +1,4 @@
+import OpenSource from "@COMPONENTS/utility/OpenSource";
 import Version from "@COMPONENTS/utility/Version";
 import ChangeLog from "./ChangeLog";
 
@@ -10,6 +11,7 @@ const Settings = ({ changeSubpage }: SettingsType) => {
     <div className="h-full overflow-y-auto">
         <Version></Version>
         <ChangeLog></ChangeLog>
+        <OpenSource></OpenSource>
     </div>
   );
 };

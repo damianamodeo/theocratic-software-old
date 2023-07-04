@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import widths, { WidthsType } from "./styles/widths";
-import heights, { HeightsType } from "./styles/heights";
+import widths, { WidthsType } from "./styles2/widths";
+import heights, { HeightsType } from "./styles2/heights";
 
 type TextInputType = {
   label: string;

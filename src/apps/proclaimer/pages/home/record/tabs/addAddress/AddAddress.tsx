@@ -70,11 +70,11 @@ type ReducerType = [
 
 const AddAddress = ({ mapDetails }: AddAddressType) => {
   const [state, dispatch]: ReducerType = useReducer(reducer, {
-    mapID: "init",
-    suburb: "init",
-    street: "init",
-    houseNumber: "",
-    unitNumber: "",
+    mapID: localStorage.getItem("addAddressMapID") || "init",
+    suburb: localStorage.getItem("addAddressSuburb") || "init",
+    street: localStorage.getItem("addAddressStreet") || "init",
+    houseNumber: localStorage.getItem("addAddressHouseNumber") || "",
+    unitNumber: localStorage.getItem("addAddressUnitNumber") || "",
     mapData: {},
   });
   const [submit, setSubmit] = useState(false);
@@ -83,7 +83,7 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
   const currentMapIndex = () => {
     return Math.max(
       0,
-      mapDetails.findIndex((map: any) => map.id == state.mapID)
+      mapDetails.findIndex((map: any) => map.id === state.mapID)
     );
   };
 
@@ -91,9 +91,10 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
     if (state.mapID === "init") {
       return 0;
     }
+
     return Math.max(
       0,
-      mapDetails[currentMapIndex()].suburbs.findIndex(
+      mapDetails[currentMapIndex()]?.suburbs.findIndex(
         (suburb) => suburb.name === state.suburb
       )
     );
@@ -123,8 +124,14 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
     <>
       <div className="flex justify-center p-2 w-full">
         <Form>
+          {/* Map Select */}
           <Form.Select
             onChange={(val) => {
+              localStorage.setItem("addAddressMapID", val);
+              localStorage.removeItem("addAddressSuburb");
+              localStorage.removeItem("addAddressStreet");
+              localStorage.removeItem("addAddressUnitNumber");
+              localStorage.removeItem("addAddressHouseNumber");
               dispatch({ type: "mapID", payload: val });
             }}
             options={mapDetails.map((map) => map.id)}
@@ -134,9 +141,14 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
             height="md"
           ></Form.Select>
           <div className="h-2"></div>
+          {/* Suburb Select */}
           {state.mapID !== "init" && (
             <Form.Select
               onChange={(val) => {
+                localStorage.setItem("addAddressSuburb", val);
+                localStorage.removeItem("addAddressStreet");
+                localStorage.removeItem("addAddressUnitNumber");
+                localStorage.removeItem("addAddressHouseNumber");
                 dispatch({ type: "suburb", payload: val });
               }}
               value={state.suburb}
@@ -149,11 +161,14 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
               height="md"
             />
           )}
-
           <div className="h-2"></div>
+          {/* Street Select */}
           {state.suburb === "init" ? null : (
             <Form.Select
               onChange={(val) => {
+                localStorage.setItem("addAddressStreet", val);
+                localStorage.removeItem("addAddressUnitNumber");
+                localStorage.removeItem("addAddressHouseNumber");
                 dispatch({ type: "street", payload: val });
               }}
               value={state.street}
@@ -168,15 +183,17 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
           )}
           <div className="h-2"></div>
           <div className="flex">
+            {/* Unit Input */}
             {state.houseNumber === "" ? null : (
               <>
                 <Form.Alphanumeric
                   value={state.unitNumber}
                   label=""
                   placeholder="Unit"
-                  onChange={(value: string) =>
-                    dispatch({ type: "unitNumber", payload: value })
-                  }
+                  onChange={(value: string) => {
+                    localStorage.setItem("addAddressUnitNumber", value);
+                    dispatch({ type: "unitNumber", payload: value });
+                  }}
                   width="sm"
                   height="md"
                 ></Form.Alphanumeric>
@@ -184,14 +201,17 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
             )}
             <div className="grow"></div>
 
+            {/* House Inout */}
             {state.street === "init" ? null : (
               <Form.Alphanumeric
                 value={state.houseNumber}
                 label=""
                 placeholder="House"
-                onChange={(value: string) =>
-                  dispatch({ type: "houseNumber", payload: value })
-                }
+                onChange={(value: string) => {
+                  localStorage.setItem("addAddressHouseNumber", value);
+                  localStorage.removeItem("addAddressUnitNumber");
+                  dispatch({ type: "houseNumber", payload: value });
+                }}
                 width="sm"
                 height="md"
                 ref={houseNumberRef}
@@ -219,39 +239,37 @@ const AddAddress = ({ mapDetails }: AddAddressType) => {
             )}
           </div>
         </Form>
-
-      
       </div>
       <AddSuburbModal
-          isOpen={state.suburb === "adding suburb"}
-          closeModal={dispatch}
-          map={currentMapIndex()}
-        />
+        isOpen={state.suburb === "adding suburb"}
+        closeModal={dispatch}
+        map={currentMapIndex()}
+      />
 
-        <AddStreetModal
-          isOpen={state.street === "adding street"}
-          closeModal={dispatch}
-          map={currentMapIndex()}
-          suburb={currentSuburbIndex()}
-          mapDetails={mapDetails}
-        />
+      <AddStreetModal
+        isOpen={state.street === "adding street"}
+        closeModal={dispatch}
+        map={currentMapIndex()}
+        suburb={currentSuburbIndex()}
+        mapDetails={mapDetails}
+      />
 
-        {submit && (
-          <SubmitAddressModal
-            closeModal={setSubmit}
-            address={state}
-            bbox={
-              mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()].bbox
-            }
-            streetCoordinates={{
-              lng: mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()]
-                .streets[currentStreetIndex()].lng,
-              lat: mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()]
-                .streets[currentStreetIndex()].lat,
-            }}
-            dispatch={dispatch}
-          ></SubmitAddressModal>
-        )}
+      {submit && (
+        <SubmitAddressModal
+          closeModal={setSubmit}
+          address={state}
+          bbox={
+            mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()].bbox
+          }
+          streetCoordinates={{
+            lng: mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()]
+              .streets[currentStreetIndex()].lng,
+            lat: mapDetails[currentMapIndex()].suburbs[currentSuburbIndex()]
+              .streets[currentStreetIndex()].lat,
+          }}
+          dispatch={dispatch}
+        ></SubmitAddressModal>
+      )}
     </>
   );
 };

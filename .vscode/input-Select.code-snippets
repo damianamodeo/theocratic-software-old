@@ -1,0 +1,43 @@
+{
+  // Place your Latest workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "-Select Component": {
+    "prefix": "input",
+    "body": [
+      "<Select",
+      "  onSelect={({ id, option, unavailable, style, action }) =>",
+      "    console.log(id, option, unavailable, style, action)",
+      "  }",
+      "  options={[",
+      "    {",
+      "      id: 1,",
+      "      option: 'Option One',",
+      "      unavailable: false,",
+      "      style: 'font-bold text-blue-400',",
+      "      action: () => console.log('here'),",
+      "    },",
+      "    {",
+      "      id: 2,",
+      "      option: 'Option Two',",
+      "      unavailable: false,",
+      "    },",
+      "    {",
+      "      id: 3,",
+      "      option: 'Option Three',",
+      "      unavailable: true,",
+      "    },",
+      "  ]}",
+      "  $0",
+      ">",
+      "  Label",
+      "</Select>"
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  }
+}

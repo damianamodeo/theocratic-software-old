@@ -1,8 +1,8 @@
 import { Listbox, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { ReactComponent as UpDownArrow } from "@ICONS/upDownArrow.svg";
-import widths, { WidthsType } from "./styles/widths";
-import heights, { HeightsType } from "./styles/heights";
+import widths, { WidthsType } from "./styles2/widths";
+import heights, { HeightsType } from "./styles2/heights";
 import Center from "@CONTAINERS/Center";
 
 type ListBoxInputType = {
@@ -53,7 +53,7 @@ const ListBoxInput = ({
           leaveFrom="transform scale-100  origin-top"
           leaveTo="transform scale-y-0  scale-x-90  origin-top"
         >
-          <Listbox.Options className={`absolute mt-1 w-full z-50`}>
+          <Listbox.Options className={`absolute mt-1 w-full z-50 mb-20`}>
             {options.map((option, index) => (
               <Listbox.Option
                 className={({ active }) =>
@@ -80,8 +80,6 @@ const ListBoxInput = ({
                 )}
               </Listbox.Option>
             ))}
-            <div className="bg-neutral-200 dark:bg-neutral-700 h-2 rounded-b-full border-b-[1rem]-xx"></div>
-            <div className="h-20"></div>
           </Listbox.Options>
         </Transition>
       </div>

@@ -1,4 +1,4 @@
-import Longpress from "@INPUTS/Longpress";
+import Longpress from "@CONTAINERS/Longpress";
 import { useState } from "react";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import Center from "@CONTAINERS/Center";

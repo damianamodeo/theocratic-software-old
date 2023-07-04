@@ -1,3 +1,4 @@
+import User from "@COMPONENTS/firebase/User";
 import ThemeSelect from "@COMPONENTS/utility/ThemeSelect";
 import Version from "@COMPONENTS/utility/Version";
 
@@ -7,9 +8,10 @@ type SettingsType = {
 
 const Settings = ({ children }: SettingsType) => {
   return (
-    <div className={`grid place-items-center p-2`}>
+    <div className={`grid place-items-center gap-4`}>
       <Version></Version>
       <ThemeSelect></ThemeSelect>
+      <User></User>
     </div>
   );
 };

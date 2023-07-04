@@ -11,6 +11,7 @@
     "prefix": "file",
     "body": [
       "import Header from '@COMPONENTS/containers/Header';",
+      "import { BackArrow } from '@ICONS/IconIndex';",
       "",
       "type ${TM_FILENAME_BASE}PageHeaderProps = {",
       "  changeSubpage: (newSubpage: string, direction: '<' | '>') => void;",
@@ -24,19 +25,17 @@
       "      left={",
       "        <div",
       "          className={`text-[2rem] m-auto`}",
-      "          onClick={() => {",
-      "            return;",
-      "          }}",
-      "        >Left</div>",
+      "          onClick={() => changeSubpage('${2|Home,Settings|}', '>')}",
+      "        ><BackArrow /></div>",
       "      }",
-      "      center={<div className={``}>${TM_FILENAME_BASE}</div>}",
+      "      center={<div className={``}>${1:$TM_FILENAME_BASE}</div>}",
       "      right={",
       "        <div",
       "          className={`text-[2rem] m-auto`}",
       "          onClick={() => {",
       "            return;",
       "          }}",
-      "        >Right</div>",
+      "        ></div>",
       "      }",
       "    />",
       "  );",
@@ -45,5 +44,5 @@
       "export default ${TM_FILENAME_BASE};"
     ],
     "description": "Header Component"
-  },
+  }
 }

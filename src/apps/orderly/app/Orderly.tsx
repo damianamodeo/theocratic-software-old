@@ -9,8 +9,24 @@ import { ReactComponent as SettingsIcon } from "../../../components/icons/settin
 import TestHeader from "../pages/home/test/TestHeader";
 import Test from "../pages/home/test/Test";
 
-// const Record = lazy(() => import("../pages/home/record/Record"));
-// const RecordHeader = lazy(() => import("../pages/home/record/RecordHeader"));
+const AddPublisher = lazy(
+  () => import("../pages/home/publishers/addPublisher/AddPublisher")
+);
+const AddPublisherHeader = lazy(
+  () => import("../pages/home/publishers/addPublisher/AddPublisherHeader")
+);
+const PublishersList = lazy(
+  () => import("../pages/home/publishers/publishersList/PublishersList")
+);
+const PublishersListHeader = lazy(
+  () => import("../pages/home/publishers/publishersList/PublishersListHeader")
+);
+const UpdatePublisher = lazy(
+  () => import("../pages/home/publishers/updatePublisher/UpdatePublisher")
+);
+const UpdatePublisherHeader = lazy(
+  () => import("../pages/home/publishers/updatePublisher/UpdatePublisherHeader")
+);
 
 function Orderly() {
   const pages = [
@@ -20,6 +36,15 @@ function Orderly() {
       subpages: {
         Home: { Content: Home, Header: HomeHeader },
         Test: { Content: Test, Header: TestHeader },
+        "Add Publisher": { Content: AddPublisher, Header: AddPublisherHeader },
+        "Publishers List": {
+          Content: PublishersList,
+          Header: PublishersListHeader,
+        },
+        "Update Publisher": {
+          Content: UpdatePublisher,
+          Header: UpdatePublisherHeader,
+        },
       },
     },
     {

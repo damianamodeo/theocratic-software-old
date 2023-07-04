@@ -32,6 +32,7 @@ type AppType = {
 
 const App = ({ pages }: AppType) => {
   const [page, setPage] = useState(pages[0].startPage);
+  const [state, setState] = useState<any>(null);
   const [direction, setDirection] = useState("<");
   const subpage = pages.map(({ startPage }) => {
     const [subpage, setSubpage] = useState(startPage);
@@ -57,11 +58,15 @@ const App = ({ pages }: AppType) => {
                   <Header
                     changeSubpage={(
                       newSubpage: string,
-                      direction: "<" | ">"
+                      direction: "<" | ">",
+                      state?: any
                     ) => {
+                      console.log(state)
+                      setState(state);
                       setDirection(direction);
                       subpage[index].setSubpage(newSubpage);
                     }}
+                    state={state}
                   />
                 </Suspense>
               </div>

@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { useLongPress } from "./useLongPress";
-import colors, { ColorsType } from "./styles/colors";
-import widths, { WidthsType } from "./styles/widths";
-import heights, { HeightsType } from "./styles/heights";
+import { useLongPress } from "../../services/utility/useLongPress";
+import colors, { ColorsType } from "./styles2/colors";
+import widths, { WidthsType } from "./styles2/widths";
+import heights, { HeightsType } from "./styles2/heights";
 
 type ButtonType = {
   children: string;

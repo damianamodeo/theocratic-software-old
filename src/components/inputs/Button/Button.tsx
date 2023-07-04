@@ -1,5 +1,5 @@
-import widths, { WidthsType } from "@INPUTS/styles/widths";
-import { useLongPress } from "@INPUTS/useLongPress";
+import widths, { WidthsType } from "@INPUTS/styles2/widths";
+import { useLongPress } from "@SERVICES/utility/useLongPress";
 import { type VariantProps, cva } from "class-variance-authority";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
@@ -72,7 +72,7 @@ const button = cva(
 );
 
 type ButtonType = {
-  children: string;
+  children: any;
   clickAction?: () => void;
   longPressAction?: () => void;
   delay?: number;
@@ -91,7 +91,7 @@ const Button = ({
   delay,
   submit,
   size,
-  circle
+  circle,
 }: ButtonProps) => {
   const ref = useRef(document.createElement("button"));
   const onLongPress = () => {
@@ -119,12 +119,14 @@ const Button = ({
       <button
         {...longPressEvent}
         type={`${submit ? "submit" : "button"}`}
-        className={twMerge(`${button({
-        color,
-        size,
-          width,
-          className: "",
-        })} ${circle && "h-12 w-12 rounded-full p-0"} `)}
+        className={twMerge(
+          `${button({
+            color,
+            size,
+            width,
+            className: "",
+          })} ${circle && "h-12 w-12 rounded-full p-0"} `
+        )}
         ref={ref}
       >
         {children}

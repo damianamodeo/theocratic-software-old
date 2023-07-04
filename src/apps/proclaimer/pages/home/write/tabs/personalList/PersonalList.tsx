@@ -3,7 +3,7 @@ import { lettersListDB } from "@SERVICES/dexie/initLetterList";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useState } from "react";
 import DeleteAddressModal from "./DeleteAddressModal";
-import LongPress from "@INPUTS/Longpress";
+import LongPress from "@CONTAINERS/Longpress";
 import Card from "@CONTAINERS/Card";
 
 type PersonalListType = {

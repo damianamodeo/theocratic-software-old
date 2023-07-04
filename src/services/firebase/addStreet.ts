@@ -31,11 +31,19 @@ const addStreet = async ({
           return a.data()?.mapDetails;
         });
         // add streets and sort
-        if (!mapDetails[mapID].suburbs[suburb].streets.includes(street)) {
+        console.log(mapDetails); //Log Variable
+
+        if (
+          !mapDetails[mapID].suburbs[suburb].streets.some(
+            (item: any) => item.name === street
+          )
+        ) {
           mapDetails[mapID].suburbs[suburb].streets = [
             ...mapDetails[mapID].suburbs[suburb].streets,
             { name: street, lng: coordinates.lng, lat: coordinates.lat },
-          ].sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+          ].sort((a, b) =>
+            a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+          );
         }
         // update doc
         transaction.update(documentRef, {

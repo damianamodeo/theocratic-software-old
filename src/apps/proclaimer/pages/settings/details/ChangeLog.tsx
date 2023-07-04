@@ -1,6 +1,13 @@
 const ChangeLog = () => {
   const changes = [
     {
+      date: "June 24, 2023",
+      changes: [
+        "Remember address details after leaving Record page",
+        "Prevent duplicate streets in Record page list",
+      ],
+    },
+    {
       date: "June 19, 2023",
       changes: [
         "Add user location to map",
