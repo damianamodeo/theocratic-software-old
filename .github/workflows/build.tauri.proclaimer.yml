@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - release
-
 jobs:
   publish-tauri:
     permissions:
@@ -38,3 +37,4 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
+          args: --config proclaimer.conf.json
