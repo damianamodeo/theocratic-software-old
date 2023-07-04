@@ -3,10 +3,6 @@
     {
       "name": "theocratic-software",
       "path": "."
-    },
-    {
-      "name": "orderly",
-      "path": "../orderly"
     }
   ],
   "settings": {}
