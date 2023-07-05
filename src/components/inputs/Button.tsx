@@ -5,7 +5,7 @@ import widths, { WidthsType } from "./styles2/widths";
 import heights, { HeightsType } from "./styles2/heights";
 
 type ButtonType = {
-  children: string;
+  children: any;
   clickAction?: () => void;
   longPressAction?: () => void;
   color: ColorsType

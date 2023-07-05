@@ -1,5 +1,5 @@
 import Card from "@CONTAINERS/Card";
-import Button from "@INPUTS/Button";
+// import Button from "@INPUTS/Button";
 
 const cardStyle = `rounded-xl bg-white dark:bg-neutral-700 text-blue-400 text-center p-6 text-3xl w-full`;
 
