@@ -19,7 +19,7 @@
     "  ": "",
     "PROCLAIMER": "",
     "dev-p": "                                             vite --host --port 5174 --mode proclaimer",
-    "build-p": "                                           tsc && VITE_APP_BUILD_TIME=$(date +%s) vite build --base=./ --mode proclaimer",
+    "build-p": "                                           tsc && vite build --base=./ --mode proclaimer",
     "preview-p": "                                      vite preview --host --port 4174 --mode orderly",
     "deploy-gh-p": "                                 npx gh-pages-clean && tsc && VITE_APP_BUILD_TIME=$(date +%s) vite build --mode proclaimer && gh-pages -d dist/proclaimer -m 'gh-pages deploy'",
     "deploy-fb-p": "                                   tsc && VITE_APP_BUILD_TIME=$(date +%s) vite build --base=./ --mode proclaimer && firebase deploy --only hosting:proclaimer",
