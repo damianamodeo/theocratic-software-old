@@ -1,5 +1,5 @@
 import AddMapID from "@COMPONENTS/firebase/AddMaps";
-import Button from "@INPUTS/button/Button";
+// import Button from "@INPUTS/button/Button";
 import { useEffect } from "react";
 
 type HomeType = {
