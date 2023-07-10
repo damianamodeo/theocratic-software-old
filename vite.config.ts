@@ -139,6 +139,6 @@ export default ({ mode }) => {
         "@SERVICES": path.resolve(__dirname, "src/services"),
       },
     },
-    server: { watch: { usePolling: true } },
+    // server: { watch: { usePolling: true } },
   });
 };

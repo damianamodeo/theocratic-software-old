@@ -1,4 +1,3 @@
-import widths, { WidthsType } from "@INPUTS/styles2/widths";
 import { useLongPress } from "@SERVICES/utility/useLongPress";
 import { type VariantProps, cva } from "class-variance-authority";
 import { useRef } from "react";

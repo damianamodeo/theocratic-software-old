@@ -40,4 +40,10 @@ input[type="number"] {
   .center-h {
     @apply flex justify-center;
   }
+  .center-v-col {
+    @apply flex flex-col justify-center;
+  }
+  .center-h-col {
+    @apply flex flex-col items-center;
+  }
 }
